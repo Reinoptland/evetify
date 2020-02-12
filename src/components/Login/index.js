@@ -21,6 +21,12 @@ class LoginContainer extends Component {
     this.setState({ email: "", password: "" });
   };
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.userLoggedIn !== this.props.userLoggedIn) {
+      setTimeout(() => this.props.history.push("/"), 1500);
+    }
+  }
+
   render() {
     return (
       <div>

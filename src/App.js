@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
 import EventFormContainer from "./components/Events/CreateEventContainer";
-import { connect } from "react-redux";
+import Home from "./components/Home";
 
 function App() {
   return (
@@ -26,7 +26,7 @@ function App() {
             </Link>
           </nav>
 
-          <Route exact path="/" component={ActualHome} />
+          <Route exact path="/" component={Home} />
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/events/new" component={EventFormContainer} />

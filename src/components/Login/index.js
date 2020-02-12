@@ -24,15 +24,25 @@ class LoginContainer extends Component {
   render() {
     return (
       <div>
-        <UserForm
-          text="Login"
-          values={this.state}
-          handleChange={this.handleChange}
-          handleSubmit={this.handleSubmit}
-        />
+        {this.props.userLoggedIn ? (
+          <h1>You are logged in</h1>
+        ) : (
+          <UserForm
+            text="Login"
+            values={this.state}
+            handleChange={this.handleChange}
+            handleSubmit={this.handleSubmit}
+          />
+        )}
       </div>
     );
   }
 }
 
-export default connect()(LoginContainer);
+const mapStateToProps = state => {
+  return {
+    userLoggedIn: state.user.token !== null
+  };
+};
+
+export default connect(mapStateToProps)(LoginContainer);

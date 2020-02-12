@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import SignupForm from "./SignupForm";
+import UserForm from "../UserForm";
 import { connect } from "react-redux";
 import { signUp } from "../../actions/users";
 
@@ -24,7 +24,8 @@ class SignupFormContainer extends Component {
     return (
       <div>
         {this.props.userCreated ? <h1>Account created</h1> : null}
-        <SignupForm
+        <UserForm
+          text={"Signup"}
           handleSubmit={this.handleSubmit}
           handleChange={this.handleChange}
           values={this.state}

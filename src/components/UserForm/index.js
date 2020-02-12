@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 
-const SignupForm = props => {
+const UserForm = props => {
   // console.log(props);
   return (
     <div>
-      Signup
+      {props.text}
       <form onSubmit={props.handleSubmit}>
         <label>Email:</label>
         <input
@@ -26,4 +26,4 @@ const SignupForm = props => {
   );
 };
 
-export default SignupForm;
+export default UserForm;

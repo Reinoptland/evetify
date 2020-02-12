@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import UserForm from "../UserForm";
+import { login } from "../../actions/users";
+import { connect } from "react-redux";
 
 class LoginContainer extends Component {
   state = {
@@ -14,6 +16,8 @@ class LoginContainer extends Component {
   handleSubmit = event => {
     event.preventDefault();
     console.log(this.state);
+    console.log("WHAT IS THIS PROPS DISPATCH", this.props.dispatch);
+    this.props.dispatch(login(this.state.email, this.state.password));
     this.setState({ email: "", password: "" });
   };
 
@@ -31,4 +35,4 @@ class LoginContainer extends Component {
   }
 }
 
-export default LoginContainer;
+export default connect()(LoginContainer);
